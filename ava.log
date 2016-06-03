@@ -1,0 +1,53 @@
+INFO  2016-06-03 14:09:06,568 [main] com.ava.PluginEntry:start(46): Plugin Wolfram Alpha Plugin starting.
+DEBUG 2016-06-03 14:09:07,273 [main] org.ava.util.PropertiesFileLoader:<init>(78): PropertiesFileLoader instance created.
+INFO  2016-06-03 14:09:07,274 [main] org.ava.util.PropertiesFileLoader:<init>(79): PropertiesFilePath is set to: C:\Users\conwitti\git\plugin-based-speech-recognition\code\workspace\Ava WolframAlpha Plugin\res\
+INFO  2016-06-03 14:09:07,275 [main] org.ava.util.PropertiesFileLoader:<init>(80): PropertiesFileName is set to: wa.properties
+DEBUG 2016-06-03 14:09:07,276 [main] org.ava.util.PropertiesFileLoader:readPropertiesFile(199): Try to load the properties file: C:\Users\conwitti\git\plugin-based-speech-recognition\code\workspace\Ava WolframAlpha Plugin\res\wa.properties
+INFO  2016-06-03 14:09:07,278 [main] org.ava.util.PropertiesFileLoader:readPropertiesFile(235): Properties file 'C:\Users\conwitti\git\plugin-based-speech-recognition\code\workspace\Ava WolframAlpha Plugin\res\wa.properties' loaded.
+DEBUG 2016-06-03 14:09:16,575 [main] com.ava.WAExecuter:<init>(50): Initialize WAExecuter class. Arguemnts: String appid : L2H6WP-4EAK9WP67E
+DEBUG 2016-06-03 14:09:17,643 [main] com.ava.WAExecuter:<init>(53): Wolfram Alpha engine initialized.
+DEBUG 2016-06-03 14:09:17,644 [main] com.ava.WAExecuter:<init>(73): WAExecuter initialized.
+DEBUG 2016-06-03 14:09:22,003 [main] com.ava.PluginEntry:initCommands(82): Initialize commands...
+DEBUG 2016-06-03 14:09:24,124 [main] com.ava.commands.QueryExecution:<init>(22): Command 'QueryExecution' initialized.
+DEBUG 2016-06-03 14:09:26,586 [main] com.ava.PluginEntry:initCommands(90): Commands initialied. 
+DEBUG 2016-06-03 14:09:37,078 [main] com.ava.commands.QueryExecution:execute(33): Starting command execution with given parameter 'who is George Washington?'.
+INFO  2016-06-03 14:09:37,079 [main] com.ava.WAExecuter:sendQuery(100): Create Wolfram Alpha a query for the question: who is George Washington?
+DEBUG 2016-06-03 14:09:37,098 [main] com.ava.WAExecuter:sendQuery(104): Query URL: http://api.wolframalpha.com/v2/query?appid=L2H6WP-4EAK9WP67E&input=who+is+George+Washington%3F&format=plaintext&async=false&reinterpret=true
+ERROR 2016-06-03 14:09:40,707 [main] com.ava.WAExecuter:sendQuery(122): There occured an error while performing the query 'who is George Washington?'.
+DEBUG 2016-06-03 14:09:40,708 [main] com.ava.WAExecuter:sendQuery(123): catching
+com.wolfram.alpha.WAException: com.wolfram.alpha.net.WAHttpException: java.net.UnknownHostException: Dies ist normalerweise ein zeitweiliger Fehler bei der Auflösung von Hostnamen. Grund ist, dass der lokale Server keine Rückmeldung vom autorisierenden Server erhalten hat
+	at com.wolfram.alpha.WAEngine.performQuery(WAEngine.java:128) ~[WolframAlpha-1.1.jar:1.1.0]
+	at com.ava.WAExecuter.sendQuery(WAExecuter.java:105) [bin/:?]
+	at com.ava.commands.QueryExecution.execute(QueryExecution.java:39) [bin/:?]
+	at com.ava.wolframAlpha.test.Test_perform_query.main(Test_perform_query.java:24) [bin/:?]
+Caused by: com.wolfram.alpha.net.WAHttpException: java.net.UnknownHostException: Dies ist normalerweise ein zeitweiliger Fehler bei der Auflösung von Hostnamen. Grund ist, dass der lokale Server keine Rückmeldung vom autorisierenden Server erhalten hat
+	at com.wolfram.alpha.net.apache.ApacheHttpTransaction.execute(ApacheHttpTransaction.java:75) ~[WolframAlpha-1.1.jar:?]
+	at com.wolfram.alpha.net.URLFetcher.fetch(URLFetcher.java:136) ~[WolframAlpha-1.1.jar:?]
+	at com.wolfram.alpha.WAEngine.performQuery(WAEngine.java:124) ~[WolframAlpha-1.1.jar:1.1.0]
+	... 3 more
+Caused by: java.net.UnknownHostException: Dies ist normalerweise ein zeitweiliger Fehler bei der Auflösung von Hostnamen. Grund ist, dass der lokale Server keine Rückmeldung vom autorisierenden Server erhalten hat
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:1.8.0_77]
+	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source) ~[?:1.8.0_77]
+	at java.net.InetAddress.getAddressesFromNameService(Unknown Source) ~[?:1.8.0_77]
+	at java.net.InetAddress.getAllByName0(Unknown Source) ~[?:1.8.0_77]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_77]
+	at java.net.InetAddress.getAllByName(Unknown Source) ~[?:1.8.0_77]
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:262) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:161) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:612) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:447) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:884) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107) ~[httpclient-4.5.2.jar:4.5.2]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:55) ~[httpclient-4.5.2.jar:4.5.2]
+	at com.wolfram.alpha.net.apache.ApacheHttpTransaction.execute(ApacheHttpTransaction.java:64) ~[WolframAlpha-1.1.jar:?]
+	at com.wolfram.alpha.net.URLFetcher.fetch(URLFetcher.java:136) ~[WolframAlpha-1.1.jar:?]
+	at com.wolfram.alpha.WAEngine.performQuery(WAEngine.java:124) ~[WolframAlpha-1.1.jar:1.1.0]
+	... 3 more
+DEBUG 2016-06-03 14:09:40,746 [main] com.ava.WAExecuter:getResultString(137): Extract result string from WAQueryResult object.
+ERROR 2016-06-03 14:09:40,747 [main] com.ava.WAExecuter:getResultString(140): There is no result. Result is null.
+DEBUG 2016-06-03 14:09:40,748 [main] com.ava.commands.QueryExecution:execute(41): Get result from Wolfram Alpha REST API: 'null'.
+DEBUG 2016-06-03 14:09:40,753 [main] org.ava.eventhandling.TTSEventBus:<init>(24): TTSEventBus created.
