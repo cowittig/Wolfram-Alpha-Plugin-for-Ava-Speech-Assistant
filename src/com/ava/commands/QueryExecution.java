@@ -16,7 +16,7 @@ public class QueryExecution implements AppCommand{
 	
 	private WAExecuter executer; 
 	
-	private String command = "Wolfram Alpha*"; 
+	private String command = "Wolfram Alpha *"; 
 	
 	public QueryExecution(WAExecuter executer) {
 		log.debug("Command 'QueryExecution' initialized.");
