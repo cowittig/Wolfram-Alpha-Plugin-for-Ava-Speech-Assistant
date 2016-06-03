@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.ava.eventhandling.SpeakEvent;
 import org.ava.eventhandling.TTSEventBus;
-import org.ava.eventhandling.UIEventBus;
 import org.ava.pluginengine.AppCommand;
 
 import com.ava.WAExecuter;
@@ -12,7 +11,7 @@ import com.wolfram.alpha.WAQueryResult;
 
 public class QueryExecution implements AppCommand{
 
-	final Logger log = LogManager.getLogger(QueryExecution.class);
+	private final Logger log = LogManager.getLogger(QueryExecution.class);
 	
 	private WAExecuter executer; 
 	

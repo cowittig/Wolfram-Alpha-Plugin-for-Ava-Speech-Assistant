@@ -28,7 +28,7 @@ import com.wolfram.alpha.visitor.Visitable;
  */
 public class WAExecuter {
 
-	final Logger log = LogManager.getLogger();
+	private final Logger log = LogManager.getLogger(WAExecuter.class);
 	
 	/**
 	 * The application id is used for queries. It is required by the Wolfram Alpha API. 

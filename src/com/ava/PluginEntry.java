@@ -29,7 +29,7 @@ import com.ava.commands.QueryExecution;
  */
 public class PluginEntry implements AppPlugin {
 
-	final Logger log = LogManager.getLogger(PluginEntry.class);
+	private final Logger log = LogManager.getLogger(PluginEntry.class);
 
 	private String pluginName = "Wolfram Alpha Plugin";
 	private Path CONFIG_PATH = null;
