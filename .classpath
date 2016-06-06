@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="lib/WolframAlphaJavaLibrary/WolframAlpha-1.1.jar" sourcepath="lib/WolframAlphaJavaLibrary/Source"/>
-	<classpathentry kind="lib" path="lib/java-json.jar/java-json.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/AvaCore"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.10/commons-codec-1.10.jar" sourcepath="lib/commons-codec-1.10/commons-codec-1.10-sources.jar">
 		<attributes>
