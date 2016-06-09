@@ -54,7 +54,7 @@ public class PluginEntry implements AppPlugin {
 			if( this.executer == null )
 				this.executer = new WAExecuter(appID);
 			else
-				log.info(this.pluginName + " with WAExecuter is already initialize.");
+				log.debug(this.pluginName + " with WAExecuter is already initialized.");
 		} catch(IllegalArgumentException e) {
 			log.fatal("An error occured while initialize PluginEntry class. Plugin will be closed.");
 			log.catching(Level.DEBUG, e);
@@ -133,8 +133,7 @@ public class PluginEntry implements AppPlugin {
 	 */
 	@Override
 	public void stop() {
-		// TODO Auto-generated method stub
-
+		log.info(this.pluginName + " plugin stopped.");
 	}
 
 
